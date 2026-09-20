@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
+const authRouter = require("./routes/authRoutes.route");
+
 const app = express();
 
 // Middleware
@@ -17,4 +19,5 @@ app.get("/", (req, res) => {
   });
 });
 
+app.use("/api/auth", authRouter);
 module.exports = app;
